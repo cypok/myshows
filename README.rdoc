@@ -1,0 +1,41 @@
+== MyShows API
+Object-oriented wrapper over API of http://myshows.ru
+
+=== Usage
+Simply require
+  require 'rubygems'
+  require 'myshows'
+And use
+  # authorization is needed for some features
+  # requires valid login and md5(password)
+  profile = MyShows::Profile.new 'demo', 'fe01ce2a7fbac8fafaed7c982a04e229'
+  profile.shows   # => all user shows
+
+  search = MyShows::Search.new
+  tbbt = search.show("The Big Bang Theory").first
+  tbbt.title      # => "The Big Bang Theory"
+  tbbt.ru_title   # => "Теория большого взрыва"
+  # and many other fields provided by API
+
+  tbbt.episodes   # => [...] - all episodes
+  pilot = tbbt.episode 1, 1
+  pilot.title     # => "Pilot"
+  pilot.show      # => tbbt
+  pilot.air_date  # => "24.09.2007" (fields parsing would be done later)
+  # and many other fields provided by API
+
+  # if you are authorized:
+  pilot.uncheck!  # => this episode would be marked as 'unwatched'
+  pilot.check!    # => this episode would be marked as 'watched'
+
+Look at http://rubydoc.info/gems/myshows/ for detailed documentation
+
+=== Tests
+  rake spec
+
+=== TODO
+- support all API (other user profiles, all unwatched episodes, ...)
+- show and episode fields conversion to Ruby types
+
+=== Author
+Vladimir Parfinenko, write at vladimir[dot]parfinenko[at]gmail[dot]com

@@ -4,12 +4,12 @@ require 'crack/json'
 require 'memoize'
 require 'singleton'
 
+require 'myshows/show'
+require 'myshows/episode'
+
 JSON = Crack::JSON
 
 module MyShows
-  autoload :Show, 'myshows/show'
-  autoload :Episode, 'myshows/episode'
-
   class API
     include Singleton
 

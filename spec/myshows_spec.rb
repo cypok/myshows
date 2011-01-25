@@ -1,6 +1,4 @@
 require 'myshows'
-require 'myshows/show'
-require 'myshows/episode'
 
 describe MyShows do
   TBBT = 'The Big Bang Theory'

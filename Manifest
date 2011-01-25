@@ -1,5 +1,5 @@
 Manifest
-README
+README.rdoc
 Rakefile
 lib/myshows.rb
 lib/myshows/api.rb

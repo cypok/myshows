@@ -1,5 +1,22 @@
+require 'myshows/item'
+
 module MyShows
-  autoload :Item, 'myshows/item'
+  # Provides such methods:
+  # title
+  # ru_title
+  # rating
+  # country
+  # started
+  # ended
+  # runtime
+  # voted
+  # year
+  # genres
+  # status
+  # watching
+  # imdb_id
+  # tvrage_id
+  # kinopoisk_id
 
   class Show < Item
     def initialize(id, data)
@@ -14,10 +31,12 @@ module MyShows
       title
     end
 
+    # Returns all episodes
     def episodes
       @api.show_episodes self
     end
 
+    # Returns episode by season and episode number
     def episode(season_number, episode_number)
       episodes.detect {|e| e.season_number == season_number && e.episode_number == episode_number }
     end
