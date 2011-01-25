@@ -1,0 +1,12 @@
+Manifest
+README
+Rakefile
+lib/myshows.rb
+lib/myshows/api.rb
+lib/myshows/episode.rb
+lib/myshows/item.rb
+lib/myshows/profile.rb
+lib/myshows/search.rb
+lib/myshows/show.rb
+myshows.gemspec
+spec/myshows_spec.rb
