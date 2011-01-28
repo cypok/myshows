@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('myshows', '0.1.1') do |p|
+Echoe.new('myshows', '0.2.0') do |p|
   p.summary        = "MyShows API"
   p.description    = "Object-oriented wrapper over API of http://myshows.ru"
   p.url            = "http://github.com/cypok/myshows"

@@ -11,6 +11,10 @@ And use
   profile = MyShows::Profile.new 'demo', 'fe01ce2a7fbac8fafaed7c982a04e229'
   profile.shows   # => all user shows
 
+  # you can find show by title among user shows (smart search)
+  profile.show 'big bang theory' # => show "The Big Bang Theory"
+  profile.show 'TBBT'            # => show "The Big Bang Theory"
+
   search = MyShows::Search.new
   tbbt = search.show("The Big Bang Theory").first
   tbbt.title      # => "The Big Bang Theory"
@@ -18,6 +22,10 @@ And use
   # and many other fields provided by API
 
   tbbt.episodes   # => [...] - all episodes
+
+  # you can find episode by title (smart search)
+  pilot = tbbt.episode "the pilot episode"
+  # or by season and episode number
   pilot = tbbt.episode 1, 1
   pilot.title     # => "Pilot"
   pilot.show      # => tbbt

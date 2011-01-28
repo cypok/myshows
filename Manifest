@@ -8,5 +8,7 @@ lib/myshows/item.rb
 lib/myshows/profile.rb
 lib/myshows/search.rb
 lib/myshows/show.rb
+lib/myshows/title_matcher.rb
 myshows.gemspec
 spec/myshows_spec.rb
+spec/title_matcher_spec.rb
