@@ -1,6 +1,9 @@
 == MyShows API
 Object-oriented wrapper over API of http://myshows.ru
 
+=== Installation
+  gem install myshows
+
 === Usage
 Simply require
   require 'rubygems'
